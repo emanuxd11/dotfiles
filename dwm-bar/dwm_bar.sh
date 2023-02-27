@@ -9,7 +9,8 @@
 # Import functions with "$include /route/to/module"
 # It is recommended that you place functions in the subdirectory ./bar-functions and use: . "$DIR/bar-functions/dwm_example.sh"
 
-# Store the directory the script is running from LOC=$(readlink -f "$0")
+# Store the directory the script is running from
+LOC=$(readlink -f "$0")
 DIR=$(dirname "$LOC")
 
 # Change the appearance of the module identifier. if this is set to "unicode", then symbols will be used as identifiers instead of text. E.g. [📪 0] instead of [MAIL 0].
@@ -43,7 +44,7 @@ export SEP2=" | "
 #. "$DIR/bar-functions/dwm_vpn.sh"
 #. "$DIR/bar-functions/dwm_weather.sh"
 #. "$DIR/bar-functions/dwm_network_speed.sh"
-#. "$DIR/bar-functions/dwm_sigma.sh"
+. "$DIR/bar-functions/dwm_sigma.sh"
 
 parallelize() {
     while true
@@ -56,24 +57,21 @@ parallelize() {
 }
 parallelize &
 
-# sigma no fap days counter
-# sigma_counter="sigma counter: "
-# sigma_counter="$sigma_counter$(((`date +%s` - `date +%s -d '2023/2/16'`) / 86400)) days"
-
 # Update dwm status bar every second
 while true
 do
     # Append results of each func one by one to the upperbar string
+    
+    # the ones I'm using
     upperbar=""
-    # upperbar="$sigma_counter | "
+    upperbar="$upperbar$(dwm_sigma)"
     upperbar="$upperbar$(dwm_spotify)"
     upperbar="$upperbar$(dwm_pulse)"
     upperbar="$upperbar$(dwm_battery)"
     upperbar="$upperbar$(dwm_resources)"
-    #upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
-    #upperbar="$upperbar${__DWM_BAR_WEATHER__}"
     upperbar="$upperbar$(dwm_date)"
-    #upperbar="$upperbar$(dwm_sigma)"
+
+    # the ones I'm not using
     #upperbar="$upperbar$(dwm_alarm)"
     #upperbar="$upperbar$(dwm_alsa)"
     #upperbar="$upperbar$(dwm_backlight)"
@@ -88,14 +86,14 @@ do
     #upperbar="$upperbar$(dwm_mpc)"
     #upperbar="$upperbar$(dwm_transmission)"
     #upperbar="$upperbar$(dwm_vpn)"
-    
+    #upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
+    #upperbar="$upperbar${__DWM_BAR_WEATHER__}"
     #upperbar="$upperbar$(dwm_network_speed)"; dwm_network_speed_record
    
     # Append results of each func one by one to the lowerbar string
     # lowerbar=""
     
     xsetroot -name "$upperbar"
-    # echo $upperbar
     # Uncomment the line below to enable the lowerbar 
     # xsetroot -name "$upperbar;$lowerbar"
     sleep 1
