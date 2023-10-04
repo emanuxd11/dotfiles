@@ -44,7 +44,6 @@ export SEP2=" | "
 #. "$DIR/bar-functions/dwm_vpn.sh"
 #. "$DIR/bar-functions/dwm_weather.sh"
 #. "$DIR/bar-functions/dwm_network_speed.sh"
-. "$DIR/bar-functions/dwm_sigma.sh"
 
 parallelize() {
     while true
@@ -64,7 +63,6 @@ do
     
     # the ones I'm using
     upperbar=""
-    upperbar="$upperbar$(dwm_sigma)"
     upperbar="$upperbar$(dwm_spotify)"
     upperbar="$upperbar$(dwm_pulse)"
     upperbar="$upperbar$(dwm_battery)"

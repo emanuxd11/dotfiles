@@ -2,7 +2,7 @@
 # I made this one myself, it's for counting sigma days
 
 dwm_sigma () {
-    days="sigma counter: $(((`date +%s` - `date +%s -d '2023/3/4'`) / 86400)) days"
+    days="$(((`date +%s` - `date +%s -d '2023/8/25'`) / 86400)) 😃"
     printf "%s%s" "$days" "$SEP2"
 }
 

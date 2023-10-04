@@ -13,11 +13,11 @@ dwm_pulse () {
     printf "%s" "$SEP1"
     if [ "$IDENTIFIER" = "unicode" ]; then
         if [ "$STATE" = "true" ] || [ "$VOL" -eq 0 ]; then
-            printf "婢"
+            printf "󰖁"
         elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 50 ]; then
-            printf " %s%%" "$VOL"
+            printf "󰖀 %s%%" "$VOL"
         else
-            printf "  %s%%" "$VOL"
+            printf "󰕾 %s%%" "$VOL"
         fi
     else
         if [ "$STATE" = "true" ] || [ "$VOL" -eq 0 ]; then

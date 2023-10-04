@@ -175,7 +175,8 @@ static char normbordercolor[]            = "#444444";
 static char normfloatcolor[]             = "#db8fd9";
 
 static char selfgcolor[]                 = "#eeeeee";
-static char selbgcolor[]                 = "#005577";
+// static char selbgcolor[]                 = "#005577";
+static char selbgcolor[]                 = HIGHCOLOR;
 static char selbordercolor[]             = HIGHCOLOR;
 static char selfloatcolor[]              = "#005577";
 
@@ -498,8 +499,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "Firefox", .tags = 1 << 7)
+	// RULE(.class = "Gimp", .tags = 1 << 4)
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
 	#elif SCRATCHPADS_PATCH
@@ -624,7 +624,7 @@ static const BarRule barrules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 #if FLEXTILE_DELUXE_LAYOUT
 static const int nstack      = 0;    /* number of clients in primary stack area */
@@ -879,13 +879,13 @@ static const char *dmenucmd[] = {
 static const char *termcmd[]  = { "st", NULL };
 
 /* For adjusting screen brightness */
-static const char *brupcmd[] = { "brightnessctl", "set", "5+", NULL };
-static const char *brdowncmd[] = { "brightnessctl", "set", "5-", NULL };
+static const char *brupcmd[] = { "brightnessctl", "set", "2+", NULL };
+static const char *brdowncmd[] = { "brightnessctl", "set", "2-", NULL };
 
 /* For adjusting volume */
 static const char *mutecmd[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
-static const char *volupcmd[] = { "pactl", "set-sink-volume", "0", "+5%", NULL };
-static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%", NULL };
+static const char *volupcmd[] = { "pactl", "set-sink-volume", "0", "+2%", NULL };
+static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-2%", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -1322,6 +1322,9 @@ static const Key keys[] = {
     /* My own for opening spotify */
     { MODKEY|ShiftMask,           XK_m,      spawn,          SHCMD("spotify") },
 
+    /* My own for opening dolphin */
+    { MODKEY|ShiftMask,           XK_f,      spawn,          SHCMD("dolphin") },
+    
     /* My own for taking a screenshot with maim */
     { 0,                          XK_Print,  spawn,          SHCMD("NAME=~/Pictures/Screenshots/yourmoms.png && maim $NAME && xclip -selection clipboard -target image/png -i $NAME") },
     { MODKEY,                     XK_Print,  spawn,          SHCMD("NAME=~/Pictures/Screenshots/yourmoms.png && maim -s $NAME && xclip -selection clipboard -target image/png -i $NAME") },
