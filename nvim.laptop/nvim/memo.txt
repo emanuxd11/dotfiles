@@ -1,0 +1,2 @@
+current config stolen from https://github.com/nvim-zh/minimal_vim
+just in case I want to put this in my dotfiles repo and I forget who made it 
