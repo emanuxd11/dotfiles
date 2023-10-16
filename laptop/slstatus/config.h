@@ -67,7 +67,7 @@ static const struct arg args[] = {
     /* function name     output format                 argument */
     { run_command,       "^c#1ea2fa^%s ",              "/home/manu/.dotfiles/laptop/slstatus/scripts/get_spotify.sh"     },
     { run_command,       " ^c#e74c3c^%s  ",            "/home/manu/.dotfiles/laptop/slstatus/scripts/get_vol.sh"         },
-    { run_command,       " ^c#e74c3c^%s  ",            "/home/manu/.dotfiles/laptop/slstatus/scripts/get_bat.sh"          },
+    { run_command,       "^c#DC8CB4^%s  ",             "/home/manu/.dotfiles/laptop/slstatus/scripts/get_bat.sh"          },
     { cpu_perc,          "^c#2ecc71^  %s%%  ",        NULL                                                               },
     { temp,              "^c#f1c40f^ %sºC  ",         "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon5/temp1_input"    },
     { ram_used,          "^c#b654de^󰮩 %s  ",           NULL                                                               },
