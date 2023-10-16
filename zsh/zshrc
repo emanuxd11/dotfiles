@@ -102,8 +102,10 @@ source $ZSH/oh-my-zsh.sh
 
 alias nv="nvim"
 alias xopen="xdg-open"
-alias timeleft="echo \"\$(upower -d | grep \"time to \" | awk '{print \$4, \$5}' | uniq)\""
 alias gnomo-connect="ssh up202107486@gnomo.fe.up.pt"
+alias killx="killall Xorg"
+alias sdnv="sudo -E -s nvim"
+alias cat="bat"
 
 PATH="/home/manu/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/manu/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
@@ -113,3 +115,6 @@ PERL_MM_OPT="INSTALL_BASE=/home/manu/perl5"; export PERL_MM_OPT;
 
 # pfetch
 # sh ~/.apps/pfetch/pfetch
+
+# autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
