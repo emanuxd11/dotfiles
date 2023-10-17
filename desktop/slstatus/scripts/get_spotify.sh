@@ -20,15 +20,8 @@ if [ "$PLAYER" = "spotify" ] || [ "$PLAYER" = "spotifyd" ]; then
         STATUS="⏸"
     fi
 
-    if [ "$SHUFFLE" = "On" ]; then
-        SHUFFLE=" 🔀"
-    else
-        SHUFFLE=""
-    fi
-
     string="$STATUS $ARTIST - $TRACK"
     printf "%.50s" "$string"
 else
     printf " "
 fi
-
