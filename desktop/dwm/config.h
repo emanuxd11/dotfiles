@@ -876,6 +876,13 @@ static const char *dmenucmd[] = {
 	#endif // BAR_DMENUMATCHTOP_PATCH
 	NULL
 };
+
+// the command that will be run when clicking the status bar button (left)
+static const char *dmenu_pwr_cmd[] = {
+	"/home/manu/.dotfiles/desktop/dmenu/scripts/dmenu_power.sh",
+	NULL
+};
+
 static const char *termcmd[]  = { "st", NULL };
 
 /* For adjusting screen brightness */
@@ -1371,7 +1378,7 @@ static const Command commands[] = {
 static const Button buttons[] = {
 	/* click                event mask           button          function        argument */
 	#if BAR_STATUSBUTTON_PATCH
-	{ ClkButton,            0,                   Button1,        spawn,          {.v = dmenucmd } },
+	{ ClkButton,            0,                   Button1,        spawn,          {.v = dmenu_pwr_cmd } },
 	#endif // BAR_STATUSBUTTON_PATCH
 	{ ClkLtSymbol,          0,                   Button1,        setlayout,      {0} },
 	#if BAR_LAYOUTMENU_PATCH

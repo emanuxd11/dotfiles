@@ -15,7 +15,10 @@ static int incremental = 0;                 /* -r  option; if 1, outputs text ea
 static int instant = 0;                     /* -n  option; if 1, selects matching item without the need to press enter */
 #endif // INSTANT_PATCH
 #if CENTER_PATCH
-static int center = 1;                      /* -c  option; if 0, dmenu won't be centered on the screen */
+static int center = 0;                      /* -c  option; by default, the center patch applies 
+											dmenu in the center unless it's specified not to by 
+											the -c flag. However, I've inversed this behaviour in
+											the source code because I find it more convenient. */
 static int min_width = 500;                 /* minimum width when centered */
 #endif // CENTER_PATCH
 #if BARPADDING_PATCH
@@ -95,7 +98,7 @@ char *colors[][2] = {
 	[SchemeSel]  = { "#eeeeee", HIGHCOLOR },
 	[SchemeOut]  = { "#000000", "#00ffff" },
 	#if BORDER_PATCH
-	[SchemeBorder] = { "#000000", "#005577" },
+	[SchemeBorder] = { HIGHCOLOR, HIGHCOLOR },
 	#endif // BORDER_PATCH
 	#if MORECOLOR_PATCH
 	[SchemeMid]  = { "#eeeeee", "#770000" },
@@ -142,7 +145,7 @@ static const char worddelimiters[] = " ";
 
 #if BORDER_PATCH
 /* Size of the window border */
-static unsigned int border_width = 0;
+static unsigned int border_width = 2;
 #endif // BORDER_PATCH
 
 #if PREFIXCOMPLETION_PATCH
