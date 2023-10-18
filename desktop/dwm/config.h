@@ -879,7 +879,7 @@ static const char *dmenucmd[] = {
 
 // the command that will be run when clicking the status bar button (left)
 static const char *dmenu_pwr_cmd[] = {
-	"/home/manu/.dotfiles/desktop/dmenu/scripts/dmenu_power.sh",
+	"/home/manu/.dotfiles/dmenu/scripts/dmenu_power.sh",
 	NULL
 };
 

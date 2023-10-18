@@ -876,6 +876,12 @@ static const char *dmenucmd[] = {
 	#endif // BAR_DMENUMATCHTOP_PATCH
 	NULL
 };
+
+static const char *dmenu_pwr_cmd[] = {
+	"/home/manu/.dotfiles/dmenu/scripts/dmenu_power.sh",
+	NULL
+};
+
 static const char *termcmd[]  = { "st", NULL };
 
 /* For adjusting screen brightness */
@@ -916,7 +922,7 @@ static const Key keys[] = {
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
-	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenu_pwr_cmd } },
 	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = termcmd } },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
