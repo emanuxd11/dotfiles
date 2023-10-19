@@ -777,6 +777,7 @@ static const char *xkb_layouts[]  = {
 
 /* key definitions */
 #define MODKEY Mod1Mask
+#define SUPERKEY Mod4Mask
 #if COMBO_PATCH && SWAPTAGS_PATCH && TAGOTHERMONITOR_PATCH
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
@@ -922,7 +923,7 @@ static const Key keys[] = {
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
-	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenu_pwr_cmd } },
+	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = termcmd } },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
@@ -1322,6 +1323,9 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume, spawn,   {.v = voldowncmd} },
 	{ 0, XF86XK_AudioRaiseVolume, spawn,   {.v = volupcmd} },
 
+	/* My own for opening the power menu with the SUPER key */
+	{ 0,                          XK_Super_L,spawn,          {.v = dmenu_pwr_cmd } },
+
     /* My own for opening brave browser */
     { MODKEY|ShiftMask,           XK_b,      spawn,          SHCMD("brave") },
     
@@ -1371,7 +1375,7 @@ static const Command commands[] = {
 static const Button buttons[] = {
 	/* click                event mask           button          function        argument */
 	#if BAR_STATUSBUTTON_PATCH
-	{ ClkButton,            0,                   Button1,        spawn,          {.v = dmenucmd } },
+	{ ClkButton,            0,                   Button1,        spawn,          {.v = dmenu_pwr_cmd } },
 	#endif // BAR_STATUSBUTTON_PATCH
 	{ ClkLtSymbol,          0,                   Button1,        setlayout,      {0} },
 	#if BAR_LAYOUTMENU_PATCH
