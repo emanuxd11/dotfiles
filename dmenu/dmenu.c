@@ -1142,6 +1142,10 @@ insert:
 	case XK_Escape:
 		cleanup();
 		exit(1);
+    // added by me since I want to exit when the super key is pressed
+    case XK_Super_L:
+        cleanup();
+        exit(1);
 	case XK_Home:
 	case XK_KP_Home:
 		if (sel == matches) {

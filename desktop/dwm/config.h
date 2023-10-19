@@ -776,7 +776,8 @@ static const char *xkb_layouts[]  = {
 #endif // XKB_PATCH
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY   Mod1Mask
+#define SUPERKEY Mod4Mask
 #if COMBO_PATCH && SWAPTAGS_PATCH && TAGOTHERMONITOR_PATCH
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
@@ -1328,6 +1329,9 @@ static const Key keys[] = {
     { MODKEY,                     XK_F7,     spawn,          {.v = mutecmd} },
     { MODKEY,                     XK_F8,     spawn,          {.v = voldowncmd} },
     { MODKEY,                     XK_F9,     spawn,          {.v = volupcmd} },
+	
+	/* My own for opening the power menu with the SUPER key */
+	{ 0,                          XK_Super_L,spawn,          {.v = dmenu_pwr_cmd } },
 
     /* My own for opening brave browser */
     { MODKEY|ShiftMask,           XK_b,      spawn,          SHCMD("brave") },
