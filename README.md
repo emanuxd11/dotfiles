@@ -13,3 +13,4 @@ here you can find my poor attempts at ricing dwm, like this one:
 - [dunst](https://github.com/dunst-project/dunst)
 - [maim](https://github.com/naelstrof/maim)
 - [neovim config](https://www.youtube.com/watch?v=w7i4amO_zaE)
+- [bpytop](https://github.com/aristocratos/bpytop)
