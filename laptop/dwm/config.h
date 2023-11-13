@@ -1336,8 +1336,8 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,           XK_f,      spawn,          SHCMD("dolphin") },
     
     /* My own for taking a screenshot with maim */
-    { 0,                          XK_Print,  spawn,          SHCMD("NAME=~/Pictures/Screenshots/screenshot-$(date +'%Y-%m-%d_%H:%M:%S').png; maim $NAME; xclip -selection clipboard -target image/png -i $NAME") },
-    { MODKEY,                     XK_Print,  spawn,          SHCMD("NAME=~/Pictures/Screenshots/screenshot-$(date +'%Y-%m-%d_%H:%M:%S').png; maim -s $NAME; xclip -selection clipboard -target image/png -i $NAME") },
+    { 0,                          XK_Print,  spawn,          SHCMD("~/.local/bin/screenshot.sh") },
+    { MODKEY,                     XK_Print,  spawn,          SHCMD("~/.local/bin/screenshot-select.sh") },
 };
 
 #if KEYMODES_PATCH
