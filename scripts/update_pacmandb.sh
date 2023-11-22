@@ -9,7 +9,9 @@ log_date=${log_date:1:19}
 log_timestamp=$(date -d "$log_date" +"%s")
 current_timestamp=$(date +"%s")
 time_diff=$((current_timestamp - log_timestamp))
-threshold=$((24 * 60 * 60))
+threshold=$((23 * 60 * 60)) # intuitively this would be 24h, but due to the couple of seconds
+# it takes to run the update, it would never be able to run 24h later (always 25). 
+# So this is the easiest solution.
 
 if [ "$time_diff" -ge "$threshold" ] || [ ! -f "/var/log/pacmanscript.log" ]; then
     sudo pacman -Sy -y
