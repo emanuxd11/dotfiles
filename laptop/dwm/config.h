@@ -451,7 +451,7 @@ static char tagicons[][NUMTAGS][MAX_TAGLEN] =
 static char *tagicons[][NUMTAGS] =
 #endif // NAMETAG_PATCH
 {
-	[DEFAULT_TAGS]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9"},
+	[DEFAULT_TAGS]        = { "一", "二", "三", "四", "五", "六", "七", "八", "九"},
 	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
 	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
 };
@@ -1326,14 +1326,14 @@ static const Key keys[] = {
 	/* My own for opening the power menu with the SUPER key */
 	{ 0,                          XK_Super_L,spawn,          {.v = dmenu_pwr_cmd } },
 
-    /* My own for opening brave browser */
-    { MODKEY|ShiftMask,           XK_b,      spawn,          SHCMD("brave") },
+    /* My own for opening the firefox profile selection */
+    { MODKEY|ShiftMask,           XK_b,      spawn,          SHCMD("firefox -p") },
     
     /* My own for opening spotify */
     { MODKEY|ShiftMask,           XK_m,      spawn,          SHCMD("spotify") },
 
-    /* My own for opening dolphin */
-    { MODKEY|ShiftMask,           XK_f,      spawn,          SHCMD("dolphin") },
+    /* My own for opening pcmanfm */
+    { MODKEY|ShiftMask,           XK_f,      spawn,          SHCMD("pcmanfm") },
     
     /* My own for taking a screenshot with maim */
     { 0,                          XK_Print,  spawn,          SHCMD("~/.local/bin/screenshot.sh") },

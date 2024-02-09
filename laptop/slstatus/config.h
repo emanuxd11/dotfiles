@@ -72,6 +72,6 @@ static const struct arg args[] = {
     { temp,              "^c#f1c40f^ %sºC  ",         "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon5/temp1_input"    },
     { ram_used,          "^c#b654de^󰮩 %s  ",           NULL                                                               },
     { disk_free,         "^c#e67e22^󰋊 %s  ",           "/home"                                                            },
-    { run_command,       "^c#1abc9c^󰚰 %s upd  ",       "pacman -Qu | wc -l"                                               },
+    // { run_command,       "^c#1abc9c^󰚰 %s upd  ",       "pacman -Qu | wc -l"                                               },
     { run_command,       "^c#c6edf7^󰸗 %s",             "date \"+%a %d/%m/%Y %R\""                                         }
 };
