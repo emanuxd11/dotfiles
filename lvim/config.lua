@@ -17,7 +17,7 @@ vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true
 vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
 
 -- disable indentation guides
-
+lvim.builtin.indentlines.active = false
 
 -- This part doesn't work the way I want, so fix later
 -- Enable displaying invisible characters
@@ -25,3 +25,9 @@ vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true
 -- Define the characters for displaying whitespace
 -- vim.opt.listchars:append({ tab = '> ', trail = '-', nbsp = '+', eol = '·' })
 
+lvim.builtin.which_key.setup.ignore_missing = true
+
+vim.opt.list = true
+vim.opt.listchars = {
+  space = "·"
+}
