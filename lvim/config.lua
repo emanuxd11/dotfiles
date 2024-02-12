@@ -29,5 +29,7 @@ lvim.builtin.which_key.setup.ignore_missing = true
 
 vim.opt.list = true
 vim.opt.listchars = {
-  space = "·"
+  trail = "·",
+  space = "·",
+  tab = "··",
 }
