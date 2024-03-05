@@ -23,7 +23,7 @@ static const unsigned int gappih         = 7;  /* horiz inner gap between window
 static const unsigned int gappiv         = 7;  /* vert inner gap between windows */
 static const unsigned int gappoh         = 9;  /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov         = 9;  /* vert outer gap between windows and screen edge */
-static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
+static const int smartgaps_fact          = 0;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 #endif // VANITYGAPS_PATCH
 #if AUTOSTART_PATCH
 static const char autostartblocksh[]     = "autostart_blocking.sh";
