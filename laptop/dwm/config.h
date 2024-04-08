@@ -883,7 +883,8 @@ static const char *dmenu_pwr_cmd[] = {
 	NULL
 };
 
-static const char *termcmd[]  = { "st", NULL };
+// static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 /* For adjusting screen brightness */
 static const char *brupcmd[] = { "brightnessctl", "set", "2+", NULL };
@@ -1332,8 +1333,8 @@ static const Key keys[] = {
     /* My own for opening spotify */
     { MODKEY|ShiftMask,           XK_m,      spawn,          SHCMD("spotify") },
 
-    /* My own for opening pcmanfm */
-    { MODKEY|ShiftMask,           XK_f,      spawn,          SHCMD("pcmanfm") },
+    /* My own for opening thunar */
+    { MODKEY|ShiftMask,           XK_f,      spawn,          SHCMD("thunar") },
     
     /* My own for taking a screenshot with maim */
     { 0,                          XK_Print,  spawn,          SHCMD("~/.local/bin/screenshot.sh") },
