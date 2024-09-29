@@ -403,7 +403,7 @@ static const char *layoutmenu_cmd = "layoutmenu.sh";
 
 #if COOL_AUTOSTART_PATCH
 static const char *const autostart[] = {
-	"st", NULL,
+	"/home/manu/.dotfiles/laptop/dwm/dwm_autostart.sh", NULL,
 	NULL /* terminate */
 };
 #endif // COOL_AUTOSTART_PATCH
