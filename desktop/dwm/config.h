@@ -884,7 +884,7 @@ static const char *dmenu_pwr_cmd[] = {
 	NULL
 };
 
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 /* For adjusting screen brightness */
 /* These only work on the laptop so I've disabled them here */
